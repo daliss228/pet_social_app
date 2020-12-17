@@ -46,12 +46,8 @@ app.*.map.json
 /android/app/release
 
 
-/lib/models/
-/lib/pages/
-/lib/providers/
-/lib/routes/
-/lib/services/
-/lib/theme/
-/lib/utils/
-/lib/widgets/
-/assets/svg/
+/lib/pages/image/
+/lib/utils/add_images.dart
+/lib/models/file_model.dart
+/lib/providers/ui_provider.dart
+/lib/services/user_service.dart
