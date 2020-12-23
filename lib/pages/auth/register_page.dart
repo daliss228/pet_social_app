@@ -94,10 +94,10 @@ class _RegisterPageState extends State<RegisterPage> {
                           SystemChannels.textInput.invokeMethod('TextInput.hide');
                           final result = await provider.handleRegister();
                           if (result.status) {
-                            Navigator.pushReplacementNamed(context, 'home');
+                            Navigator.pushReplacementNamed(context, 'photo');
                           } else {
                             provider.viewState = ViewState.Idle;
-                            showAlert(context, 'Ups!', result.message);
+                            showAlert(context, 'Ups!', result.message, Icons.sentiment_dissatisfied);
                           }
                         }
                         : () {} 

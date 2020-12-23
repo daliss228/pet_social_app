@@ -5,6 +5,7 @@ import 'package:pet_social_app/theme/theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:pet_social_app/routes/routes.dart';
 import 'package:pet_social_app/utils/shared_prefs.dart';
+import 'package:pet_social_app/providers/photo_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,14 +25,14 @@ class PetSocialApp extends StatelessWidget {
     ]);
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => null)
+        ChangeNotifierProvider(create: (context) => PhotoProvider())
       ],
       child: MaterialApp(
         title: 'Petapp',
+        routes: routes(),
         theme: MyTheme.themeData,
         debugShowCheckedModeBanner: false,
-        initialRoute: sharedPrefs.token.isNotEmpty ? 'home': 'auth',
-        routes: routes(),
+        initialRoute: sharedPrefs.token.isNotEmpty ? 'photo': 'auth',
       ),
     );
   }

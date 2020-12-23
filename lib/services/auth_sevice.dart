@@ -9,7 +9,7 @@ class AuthService {
 
   final _sharedPrefs = SharedPrefs();
   final _auth = FirebaseAuth.instance; 
-  final _dbref = FirebaseFirestore.instance.collection("users");
+  final _dbRef = FirebaseFirestore.instance.collection("users");
 
   Future<MyResponse> singUp(UserModel userModel, String password) async {
     try {
@@ -18,7 +18,7 @@ class AuthService {
         _sharedPrefs.uid = result.user.uid;
         _sharedPrefs.token = await result.user.getIdToken();
       }
-      await _dbref.add(userModel.toJson());
+      await _dbRef.doc(result.user.uid).set(userModel.toJson());
       return MyResponse(status: true, message: "Usuario registrado correctamente.");
     } on FirebaseAuthException catch(e) {
       return MyResponse(status: false, message: Helpers.firebaseErrMessages(e.code));

@@ -44,10 +44,3 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-
-
-/lib/pages/image/
-/lib/utils/add_images.dart
-/lib/models/file_model.dart
-/lib/providers/ui_provider.dart
-/lib/services/user_service.dart
