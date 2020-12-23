@@ -99,14 +99,13 @@ class AuthProvider with ChangeNotifier implements LoaderState {
   Future<MyResponse> handleLogin() async {
     viewState = ViewState.Busy;
     final authService = AuthService();
-    final result = await authService.signIn(this._email.value, this._password.value);
-    return result;
+    return await authService.signIn(this._email.value, this._password.value);
   }
 
   Future<MyResponse> handleRegister() async {
     viewState = ViewState.Busy;
     final authService = AuthService();
-    final result = await authService.singUp(
+    return await authService.singUp(
       UserModel(
         name: this.name.value,
         email: this._email.value,
@@ -114,7 +113,6 @@ class AuthProvider with ChangeNotifier implements LoaderState {
       ), 
       this._password.value
     );
-    return result;
   }
 
   @override

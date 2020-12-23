@@ -77,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                             Navigator.pushReplacementNamed(context, 'home');
                           } else {
                             provider.viewState = ViewState.Idle;
-                            showAlert(context, 'Ups!', result.message);
+                            showAlert(context, 'Ups!', result.message, Icons.sentiment_dissatisfied);
                           }
                         }
                         : () {}
