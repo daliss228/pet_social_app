@@ -32,7 +32,7 @@ class PetSocialApp extends StatelessWidget {
         routes: routes(),
         theme: MyTheme.themeData,
         debugShowCheckedModeBanner: false,
-        initialRoute: sharedPrefs.token.isNotEmpty ? 'photo': 'auth',
+        initialRoute: sharedPrefs.token.isNotEmpty ? 'home': 'auth',
       ),
     );
   }
